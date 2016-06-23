@@ -1,0 +1,19 @@
+.form-input {
+  border: none;
+  border-bottom: 1px solid $light-grey;
+  font-size: $s-size;
+  outline: none;
+  padding: $m-space;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.input-button-group {
+  .form-input {
+    width: 70%;
+  }
+
+  .btn {
+    width: 30%;
+  }
+}

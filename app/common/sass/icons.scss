@@ -1,0 +1,28 @@
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-cross2:before {
+  content: "\e902";
+}
+
+.icon-pause:before {
+  content: "\e901";
+}
+.icon-question-mark:before {
+  content: "\e904";
+}
+.icon-question-mark-secondary:before {
+    content: "\e905";
+}

@@ -1,0 +1,88 @@
+@mixin linearGradient($top, $bottom, $top_stop: 0%, $bottom_stop: 100%) {
+  background: $top; /* Old browsers */
+  background: -moz-linear-gradient(top,  $top $top_stop, $bottom $bottom_stop); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop($top_stop,$top), color-stop(100%,$bottom)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  $top $top_stop,$bottom $bottom_stop); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  $top $top_stop,$bottom $bottom_stop); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  $top $top_stop,$bottom $bottom_stop); /* IE10+ */
+  background: linear-gradient(to bottom,  $top $top_stop,$bottom $bottom_stop); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($top)}', endColorstr='#{ie-hex-str($bottom)}', GradientType=0); // IE9 and down, gets no color-stop at all for proper fallback
+}
+
+@mixin gradient-horizontal($start-color: #555, $end-color: #333, $start-percent: 0%, $end-percent: 100%) {
+  background-image: -webkit-linear-gradient(left, $start-color $start-percent, $end-color $end-percent); // Safari 5.1-6, Chrome 10+
+  background-image: -o-linear-gradient(left, $start-color $start-percent, $end-color $end-percent); // Opera 12
+  background-image: linear-gradient(to right, $start-color $start-percent, $end-color $end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=1); // IE9 and down
+}
+
+@mixin gradient-horizontal-three-colors($start-color: #00b3ee, $mid-color: #7a43b6, $color-stop: 50%, $end-color: #c3325f) {
+  background-image: -webkit-linear-gradient(left, $start-color, $mid-color $color-stop, $end-color);
+  background-image: -o-linear-gradient(left, $start-color, $mid-color $color-stop, $end-color);
+  background-image: linear-gradient(to right, $start-color, $mid-color $color-stop, $end-color);
+  background-repeat: no-repeat;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=1); // IE9 and down, gets no color-stop at all for proper fallback
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false, $top2: 0, $left2: 0, $blur2: 0, $color2: transparent) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color, $top2 $left2 $blur2 $color2;
+    -moz-box-shadow:inset $top $left $blur $color,$top2 $left2 $blur2 $color2;
+    box-shadow:inset $top $left $blur $color, $top2 $left2 $blur2 $color2;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color, $top2 $left2 $blur2 $color2;
+    -moz-box-shadow: $top $left $blur $color, $top2 $left2 $blur2 $color2;
+    box-shadow: $top $left $blur $color, $top2 $left2 $blur2 $color2;
+  }
+}
+
+@mixin border-radius($dim: 0) {
+  -webkit-border-radius: $dim;
+  -moz-border-radius: $dim;
+  border-radius: $dim;
+}
+
+@mixin border-left-radius($dim: 0) {
+  -webkit-border-top-left-radius: $dim;
+  -webkit-border-bottom-left-radius: $dim;
+  -moz-border-radius-topleft: $dim;
+  -moz-border-radius-bottomleft: $dim;
+  border-top-left-radius: $dim;
+  border-bottom-left-radius: $dim;
+}
+
+@mixin border-right-radius($dim: 0) {
+  -webkit-border-top-right-radius: $dim;
+  -webkit-border-bottom-right-radius: $dim;
+  -moz-border-radius-topright: $dim;
+  -moz-border-radius-bottomright: $dim;
+  border-top-right-radius: $dim;
+  border-bottom-right-radius: $dim;
+}
+
+@mixin placeholder($color, $line-height){
+  &::-webkit-input-placeholder{
+     color: $color;
+     line-height: $line-height;
+  }
+  &:-ms-input-placeholder{
+     color: $color;
+     line-height: $line-height;
+  }
+  &:-moz-placeholder{
+     color: $color;
+     line-height: $line-height;
+  }
+  &:-moz-placeholder {
+     color: $color;
+     line-height: $line-height;
+  }
+}
+
+@mixin panel($padding: 1.5rem, $width: 100%) {
+  background-color: $white;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.16),0 0 2px 0 rgba(0,0,0,.12);
+  padding: $padding;
+  width: $width;
+}

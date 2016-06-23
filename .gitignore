@@ -1,0 +1,7 @@
+build/
+node_modules/
+coverage/
+mock-server/rest/*
+mock-server/generators/*
+!mock-server/rest/default/
+!mock-server/generators/default.js

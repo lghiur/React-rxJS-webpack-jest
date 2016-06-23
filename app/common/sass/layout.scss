@@ -1,0 +1,17 @@
+html, body {
+  background-color: $grey;
+  margin: 0;
+  font-family: FlamaBasic;
+  font-size: 10px;
+  height: 100%;
+  min-height: 100%;
+}
+
+.page {
+  padding-bottom: 15.5rem;
+  width: 100%;
+
+  @include media-query(0, $small-breakpoint) {
+    padding-bottom: 11.6rem;
+  }
+}

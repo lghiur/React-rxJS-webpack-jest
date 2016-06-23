@@ -1,0 +1,27 @@
+$transition-fade: opacity 300ms ease-in;
+.fade-appear {
+  opacity: 0;
+
+  &.fade-appear-active {
+    opacity: 1;
+    transition: $transition-fade;
+  }
+}
+
+.fade-enter {
+  opacity: 0;
+
+  &.fade-enter-active {
+    opacity: 1;
+    transition: $transition-fade;
+  }
+}
+
+.fade-leave {
+  opacity: 1;
+
+  &.fade-leave-active {
+    opacity: 0;
+    transition: $transition-fade;
+  }
+}

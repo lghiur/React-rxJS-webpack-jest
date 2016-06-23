@@ -1,0 +1,14 @@
+{
+  "desc": "Default endpoint for server. Returns current timestamp",
+  "desc2": "",
+  "security": [],
+  "protected": false,
+  "status": "open",
+  "request": {},
+  "response": {
+    "statusCode": "200",
+    "schema": {
+      "type": "application/json"
+    }
+  }
+}
